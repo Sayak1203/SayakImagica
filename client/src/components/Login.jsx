@@ -6,7 +6,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 
 const Login = () => {
-    const backendUrl = 'https://sayakimagica-4.onrender.com/';
+    const backendUrl = 'https://sayakimagica-4.onrender.com';
     const [state, setState] = useState('Login')
     const {setShowLogin, setToken, setUser} = useContext(AppContext)
     const [name, setName]=useState('')
