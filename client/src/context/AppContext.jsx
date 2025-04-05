@@ -11,7 +11,9 @@ const AppContextProvider = (props) => {
     const [token, setToken] = useState(localStorage.getItem('token') || '');
     const [credit, setCredit] = useState(0);
     const navigate = useNavigate()
-
+    
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    
     const loadCreditsData = async ()=>{
         try {
             const {data} = await axios.get(backendUrl + '/api/user/credits', {headers: {token}})
@@ -51,7 +53,6 @@ const AppContextProvider = (props) => {
         setUser(null)
     }
 
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
     useEffect(()=>{
         if(token){
